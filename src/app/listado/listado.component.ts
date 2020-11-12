@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListadoService } from '../services/listado.service';
 
 @Component({
   selector: 'app-listado',
@@ -10,7 +11,12 @@ export class ListadoComponent implements OnInit {
   nombre: string = 'Desconocido';
   estado: boolean = true;
 
-  constructor() { }
+  miArray = [1, 2, 3, 4];
+  listado;
+
+  constructor(public listadoServ: ListadoService) {
+    this.listado = this.listadoServ.getDispositivos();
+  }
 
   ngOnInit(): void {
   }

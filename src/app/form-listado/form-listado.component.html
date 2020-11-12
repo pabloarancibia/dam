@@ -1,0 +1,26 @@
+<form [formGroup]="formDispositivo" (ngSubmit)="guardarDispositivo()">
+    <div>
+        <label>Nombre</label>
+        <input formControlName="nombre" name="nombre" />
+    </div>
+    <div class="error" *ngIf="formDispositivo.controls.nombre.invalid && formDispositivo.controls.nombre.touched">
+        El nombre es inválido. Espero que completes el nombre.
+    </div>
+    <div>
+        <label>Ubicación</label>
+        <input formControlName="ubicacion" name="ubicacion" />
+    </div>
+    <div class="error" *ngIf="formDispositivo.controls.ubicacion.invalid && formDispositivo.controls.ubicacion.touched">
+        Ubicacion es inválido. Espero que completes la Ubicación.
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input formControlName="email" name="email" />
+    </div>
+
+
+    <button type="submit" [disabled]="formDispositivo.invalid">Guardar</button>
+</form>
+{{formDispositivo.valid}}
+{{formDispositivo.value | json}}

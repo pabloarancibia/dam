@@ -7,3 +7,21 @@
 <button value="Hola" type="button" (click)="clickEnboton()">console</button>
 
 <button value="Hola" type="button" (click)="cambiar()">{{estado}}</button>
+
+<div>
+    <br>
+    {{4 | elevar:10}}
+    <br>
+    <div *ngIf="estado">RENDERIZAR O NO SEGUN NGIF</div>
+
+    <div *ngFor=" let e of miArray">
+        <p>{{e}}</p>
+    </div>
+
+    <div *ngFor=" let l of listado">
+        <li appNombreDirectiva>{{l.nombre}}</li>
+        <li>{{l.ubicacion}}</li>
+    </div>
+
+
+</div>
